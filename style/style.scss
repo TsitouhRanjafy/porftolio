@@ -1,0 +1,96 @@
+/*  Initialisation  */
+$main-color:#F0F0F0;
+$secondColor:#242424;
+$threeColor:#585858;
+$width-navbar_menu:500px;
+$height-header:10vh;
+
+@mixin padding-left-right{
+    padding: 0 5%;
+}
+@mixin width-height-100{
+    width: 100%;    
+    height: 100%;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../Font/framd.ttf");
+}
+
+body {
+    @include width-height-100();
+    margin: 0;
+    @include padding-left-right();
+    box-sizing: border-box; 
+    background: $main-color;
+    /*border: solid 1px red;*/
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    height: 10vh;
+    background-color: $main-color;
+    position: fixed;
+    @include padding-left-right();
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    .navbar {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: solid 1px rgb(0, 60, 172);
+        a{
+            text-decoration: none;
+            color: $secondColor;
+            font-family: "Inter",sans-serif;
+            position: relative;
+        }
+        .navbar_logo{
+            .logo{
+                font-weight: 700;
+                font-size: 20px;
+                color: $secondColor;
+            }
+        }
+        .navbar_menu{
+            width: $width-navbar_menu;
+            height: 100%;
+            font-weight: 400;
+            font-size: 18px;
+            text-align: center;
+            .underline::after,a:hover::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 1px;
+                background-color: $secondColor;
+                box-shadow: 0 2px 0 0;
+            }
+        }
+    }
+    .center-row{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
+    .pos-relative{
+        position: relative;
+    }
+}
+.main {
+    border: solid 1px rgb(21, 255, 0);
+    @include width-height-100();
+    margin-top: $height-header; // header engaged 10vh of height
+    .main_page{
+        border: solid 1px red;
+        width: auto;
+        height: 90vh; // header engaged 10vh of height
+        scroll-margin-top: $height-header;
+    }
+}
