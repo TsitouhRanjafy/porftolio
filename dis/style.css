@@ -1,0 +1,73 @@
+/*  Initialisation  */
+@font-face {
+  font-family: "Inter";
+  src: url("../Font/framd.ttf"); }
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 5%;
+  box-sizing: border-box;
+  background: #F0F0F0;
+  /*border: solid 1px red;*/
+  display: flex;
+  flex-direction: column; }
+
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: #F0F0F0;
+  position: fixed;
+  padding: 0 5%;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  flex-direction: column; }
+  header .navbar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: solid 1px #003cac; }
+    header .navbar a {
+      text-decoration: none;
+      color: #242424;
+      font-family: "Inter",sans-serif;
+      position: relative; }
+    header .navbar .navbar_logo .logo {
+      font-weight: 700;
+      font-size: 20px;
+      color: #242424; }
+    header .navbar .navbar_menu {
+      width: 500px;
+      height: 100%;
+      font-weight: 400;
+      font-size: 18px;
+      text-align: center; }
+      header .navbar .navbar_menu .underline::after, header .navbar .navbar_menu a:hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: #242424;
+        box-shadow: 0 2px 0 0; }
+  header .center-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center; }
+  header .pos-relative {
+    position: relative; }
+
+.main {
+  border: solid 1px #15ff00;
+  width: 100%;
+  height: 100%;
+  margin-top: 10vh; }
+  .main .main_page {
+    border: solid 1px red;
+    width: auto;
+    height: 90vh;
+    scroll-margin-top: 10vh; }
