@@ -87,10 +87,45 @@ header{
     border: solid 1px rgb(21, 255, 0);
     @include width-height-100();
     margin-top: $height-header; // header engaged 10vh of height
-    .main_page{
+    .section{
         border: solid 1px red;
         width: auto;
         height: 90vh; // header engaged 10vh of height
-        scroll-margin-top: $height-header;
+        scroll-margin-top: $height-header; // for the scroll margin top
+        &.section_home{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .content_view{
+                border: solid 2px green ;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                .view{
+                    border: solid 1px aqua;
+                    &.view_ico{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        height: 100px;
+                        .ico{
+                            width: 2.5vw;
+                            height: 2.5vw;
+                            cursor: pointer;
+                        }
+                    }
+                    &.view_salutation{
+
+                    }
+                    &.view_image{
+                        .image{
+                            width: 20vw;
+                            height: 20vw;
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }
