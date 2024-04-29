@@ -16,6 +16,18 @@ $height-header:10vh;
     font-family: "Inter";
     src: url("../Font/framd.ttf");
 }
+@mixin align-element($-display,$-content,$-direction,$-alignitem){
+    display: $-display;
+    justify-content:$-content;
+    flex-direction: $-direction;
+    align-items: $-alignitem;
+}
+@mixin text-config($-familly,$-color,$-weight,$-size){
+    font-family: $-familly;
+    color: $-color;
+    font-weight: $-weight;
+    font-size: $-size;
+}
 
 body {
     @include width-height-100();
@@ -67,17 +79,14 @@ header{
                 left: 0;
                 bottom: -2px;
                 width: 100%;
-                height: 1px;
+                height: 2px;
                 background-color: $secondColor;
                 box-shadow: 0 2px 0 0;
             }
         }
     }
     .center-row{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
+        @include align-element(flex, space-between, row, center);        
     }
     .pos-relative{
         position: relative;
@@ -93,21 +102,16 @@ header{
         height: 90vh; // header engaged 10vh of height
         scroll-margin-top: $height-header; // for the scroll margin top
         &.section_home{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            @include align-element(flex, center, column, inherit);
             .content_view{
                 border: solid 2px green ;
-                display: flex;
-                justify-content: space-between;
-                flex-direction: row;
+                @include align-element(flex, space-between, row, center);            
                 .view{
                     border: solid 1px aqua;
                     &.view_ico{
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        height: 100px;
+                        @include align-element(flex, space-around, column, center);
+                        width: 34px;
+                        height: 144px;
                         .ico{
                             width: 2.5vw;
                             height: 2.5vw;
@@ -115,9 +119,32 @@ header{
                         }
                     }
                     &.view_salutation{
-
+                        width: 450px;
+                        height: 320px;
+                        padding: 12px;
+                        @include align-element(flex, center, column, right);             
+                        gap: 25px;           
+                        .hello{
+                            @include text-config("Inter", $secondColor, 700, 40px);                            
+                        }
+                        .paragraphe{
+                            @include text-config("Inter", $threeColor, 700, 16px)
+                        }
+                        .btn_container{
+                            .btn{
+                                width: 161px;
+                                height: 60px;
+                                padding: 10px;
+                                border-radius: 8px;
+                                background:$secondColor;
+                                @include text-config("Inter", $main-color, 400, 16px);                           
+                            }
+                        }
                     }
                     &.view_image{
+                        width: 397px;
+                        height: 336px;
+                        @include align-element(flex, center, initial, center);                        
                         .image{
                             width: 20vw;
                             height: 20vw;
