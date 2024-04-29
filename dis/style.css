@@ -50,7 +50,7 @@ header {
         left: 0;
         bottom: -2px;
         width: 100%;
-        height: 1px;
+        height: 2px;
         background-color: #242424;
         box-shadow: 0 2px 0 0; }
   header .center-row {
@@ -73,25 +73,64 @@ header {
     scroll-margin-top: 10vh; }
     .main .section.section_home {
       display: flex;
+      justify-content: center;
       flex-direction: column;
-      justify-content: center; }
+      align-items: inherit; }
       .main .section.section_home .content_view {
         border: solid 2px green;
         display: flex;
         justify-content: space-between;
-        flex-direction: row; }
+        flex-direction: row;
+        align-items: center; }
         .main .section.section_home .content_view .view {
           border: solid 1px aqua; }
           .main .section.section_home .content_view .view.view_ico {
             display: flex;
-            flex-direction: column;
             justify-content: space-around;
-            height: 100px;
-            top: 50%; }
+            flex-direction: column;
+            align-items: center;
+            width: 34px;
+            height: 144px; }
             .main .section.section_home .content_view .view.view_ico .ico {
               width: 2.5vw;
               height: 2.5vw;
               cursor: pointer; }
-          .main .section.section_home .content_view .view.view_image .image {
-            width: 20vw;
-            height: 20vw; }
+          .main .section.section_home .content_view .view.view_salutation {
+            width: 450px;
+            height: 320px;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: right;
+            gap: 25px; }
+            .main .section.section_home .content_view .view.view_salutation .hello {
+              font-family: "Inter";
+              color: #242424;
+              font-weight: 700;
+              font-size: 40px; }
+            .main .section.section_home .content_view .view.view_salutation .paragraphe {
+              font-family: "Inter";
+              color: #585858;
+              font-weight: 700;
+              font-size: 16px; }
+            .main .section.section_home .content_view .view.view_salutation .btn_container .btn {
+              width: 161px;
+              height: 60px;
+              padding: 10px;
+              border-radius: 8px;
+              background: #242424;
+              font-family: "Inter";
+              color: #F0F0F0;
+              font-weight: 400;
+              font-size: 16px; }
+          .main .section.section_home .content_view .view.view_image {
+            width: 397px;
+            height: 336px;
+            display: flex;
+            justify-content: center;
+            flex-direction: initial;
+            align-items: center; }
+            .main .section.section_home .content_view .view.view_image .image {
+              width: 20vw;
+              height: 20vw; }
