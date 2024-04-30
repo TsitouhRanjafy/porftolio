@@ -3,7 +3,7 @@ $main-color:#F0F0F0;
 $secondColor:#242424;
 $threeColor:#585858;
 $width-navbar_menu:500px;
-$height-header:10vh;
+$height-header:13vh;
 
 @mixin padding-left-right{
     padding: 0 5%;
@@ -15,6 +15,10 @@ $height-header:10vh;
 @font-face {
     font-family: "Inter";
     src: url("../Font/framd.ttf");
+}
+@font-face {
+    font-family: "Inter2";
+    src: url("../Font/framdit.ttf");
 }
 @mixin align-element($-display,$-content,$-direction,$-alignitem){
     display: $-display;
@@ -41,7 +45,7 @@ body {
 }
 header{
     width: 100%;
-    height: 10vh;
+    height: $height-header;
     background-color: $main-color;
     position: fixed;
     @include padding-left-right();
@@ -49,11 +53,12 @@ header{
     left: 0;
     box-sizing: border-box;
     flex-direction: column;
+    
     .navbar {
         display: block;
         width: 100%;
         height: 100%;
-        border: solid 1px rgb(0, 60, 172);
+        //border: solid 1px rgb(0, 60, 172);
         a{
             text-decoration: none;
             color: $secondColor;
@@ -113,8 +118,8 @@ header{
                         width: 34px;
                         height: 144px;
                         .ico{
-                            width: 2.5vw;
-                            height: 2.5vw;
+                            width: 2vw;
+                            height: 2vw;
                             cursor: pointer;
                         }
                     }
@@ -123,12 +128,26 @@ header{
                         height: 320px;
                         padding: 12px;
                         @include align-element(flex, center, column, right);             
-                        gap: 25px;           
+                        gap: 8px;           
                         .hello{
-                            @include text-config("Inter", $secondColor, 700, 40px);                            
+                            @include text-config("Inter", $secondColor, 700, 40px);  
+                            margin-bottom: 5px                          
+                        }
+                        .span_title{
+                            @include align-element(flex, left, row, center);
+                            gap: 5px;
+                            .span{
+                                width: 100px;
+                                height: 2px;
+                                background: $secondColor;
+                            }
+                            .title{
+                                @include text-config("Inter", $threeColor, 700, 16px);
+                            }
                         }
                         .paragraphe{
-                            @include text-config("Inter", $threeColor, 700, 16px)
+                            @include text-config("Inter", $threeColor, 600, 16px);
+                            margin-top:5px;
                         }
                         .btn_container{
                             .btn{
@@ -137,17 +156,24 @@ header{
                                 padding: 10px;
                                 border-radius: 8px;
                                 background:$secondColor;
-                                @include text-config("Inter", $main-color, 400, 16px);                           
+                                @include text-config("Inter", $main-color, 400, 16px);   
+                                &.btn_contact{
+                                    width: 25%;
+                                }                        
                             }
                         }
                     }
                     &.view_image{
-                        width: 397px;
-                        height: 336px;
-                        @include align-element(flex, center, initial, center);                        
+                        width: 350px;
+                        height: 350px;
+                        border-radius: 54% 39% 18% 76% / 50% 63% 25% 48%;
+                        @include align-element(flex, center, row, center);     
+                        background-color:#dbdbdb;              
+                        overflow: hidden;   
                         .image{
-                            width: 20vw;
-                            height: 20vw;
+                            width: 100%;
+                            height: 100%;
+                        
                         }
                     }
                 }
