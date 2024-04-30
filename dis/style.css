@@ -3,6 +3,10 @@
   font-family: "Inter";
   src: url("../Font/framd.ttf"); }
 
+@font-face {
+  font-family: "Inter2";
+  src: url("../Font/framdit.ttf"); }
+
 body {
   width: 100%;
   height: 100%;
@@ -16,7 +20,7 @@ body {
 
 header {
   width: 100%;
-  height: 10vh;
+  height: 13vh;
   background-color: #F0F0F0;
   position: fixed;
   padding: 0 5%;
@@ -27,8 +31,7 @@ header {
   header .navbar {
     display: block;
     width: 100%;
-    height: 100%;
-    border: solid 1px #003cac; }
+    height: 100%; }
     header .navbar a {
       text-decoration: none;
       color: #242424;
@@ -65,12 +68,12 @@ header {
   border: solid 1px #15ff00;
   width: 100%;
   height: 100%;
-  margin-top: 10vh; }
+  margin-top: 13vh; }
   .main .section {
     border: solid 1px red;
     width: auto;
     height: 90vh;
-    scroll-margin-top: 10vh; }
+    scroll-margin-top: 13vh; }
     .main .section.section_home {
       display: flex;
       justify-content: center;
@@ -92,8 +95,8 @@ header {
             width: 34px;
             height: 144px; }
             .main .section.section_home .content_view .view.view_ico .ico {
-              width: 2.5vw;
-              height: 2.5vw;
+              width: 2vw;
+              height: 2vw;
               cursor: pointer; }
           .main .section.section_home .content_view .view.view_salutation {
             width: 450px;
@@ -103,17 +106,34 @@ header {
             justify-content: center;
             flex-direction: column;
             align-items: right;
-            gap: 25px; }
+            gap: 8px; }
             .main .section.section_home .content_view .view.view_salutation .hello {
               font-family: "Inter";
               color: #242424;
               font-weight: 700;
-              font-size: 40px; }
+              font-size: 40px;
+              margin-bottom: 5px; }
+            .main .section.section_home .content_view .view.view_salutation .span_title {
+              display: flex;
+              justify-content: left;
+              flex-direction: row;
+              align-items: center;
+              gap: 5px; }
+              .main .section.section_home .content_view .view.view_salutation .span_title .span {
+                width: 100px;
+                height: 2px;
+                background: #242424; }
+              .main .section.section_home .content_view .view.view_salutation .span_title .title {
+                font-family: "Inter";
+                color: #585858;
+                font-weight: 700;
+                font-size: 16px; }
             .main .section.section_home .content_view .view.view_salutation .paragraphe {
               font-family: "Inter";
               color: #585858;
-              font-weight: 700;
-              font-size: 16px; }
+              font-weight: 600;
+              font-size: 16px;
+              margin-top: 5px; }
             .main .section.section_home .content_view .view.view_salutation .btn_container .btn {
               width: 161px;
               height: 60px;
@@ -124,13 +144,18 @@ header {
               color: #F0F0F0;
               font-weight: 400;
               font-size: 16px; }
+              .main .section.section_home .content_view .view.view_salutation .btn_container .btn.btn_contact {
+                width: 25%; }
           .main .section.section_home .content_view .view.view_image {
-            width: 397px;
-            height: 336px;
+            width: 350px;
+            height: 350px;
+            border-radius: 54% 39% 18% 76% / 50% 63% 25% 48%;
             display: flex;
             justify-content: center;
-            flex-direction: initial;
-            align-items: center; }
+            flex-direction: row;
+            align-items: center;
+            background-color: #dbdbdb;
+            overflow: hidden; }
             .main .section.section_home .content_view .view.view_image .image {
-              width: 20vw;
-              height: 20vw; }
+              width: 100%;
+              height: 100%; }
