@@ -4,6 +4,7 @@ $secondColor:#242424;
 $threeColor:#585858;
 $width-navbar_menu:500px;
 $height-header:13vh;
+$height-header-XS:10vh;
 
 @mixin padding-left-right{
     padding: 0 5%;
@@ -43,6 +44,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 header{
     width: 100%;
     height: $height-header;
@@ -68,7 +70,7 @@ header{
         .navbar_logo{
             .logo{
                 font-weight: 700;
-                font-size: 20px;
+                font-size: 25px;
                 color: $secondColor;
             }
         }
@@ -88,6 +90,15 @@ header{
                 background-color: $secondColor;
                 box-shadow: 0 2px 0 0;
             }
+            & footer{
+                visibility: hidden;
+                position: absolute;
+            }
+            
+        }
+        .hamburger{
+            visibility: hidden;
+            position: absolute;
         }
     }
     .center-row{
@@ -104,7 +115,7 @@ header{
     .section{
         border: solid 1px red;
         width: auto;
-        height: 90vh; // header engaged 10vh of height
+        height: 87vh; // header engaged 13vh of height
         scroll-margin-top: $height-header; // for the scroll margin top
         &.section_home{
             @include align-element(flex, center, column, inherit);
@@ -182,3 +193,122 @@ header{
         }
     }
 }
+
+
+
+
+
+
+
+/**
+    RESPONSIVE START
+*/
+// XS Nokia 5.1 plus
+@media (max-width:575.98px) {
+    header{
+        height: $height-header-XS;
+        .navbar {
+            a{
+            }
+            .navbar_logo{
+                .logo{
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+            }
+            .navbar_menu{
+                &.XS{
+                    position: absolute;
+                    width: 100vw;
+                    height: 100vh;
+                    @include align-element(flex, center, column, center);
+                    box-sizing: border-box;
+                    top: 0px;
+                    right: 0px;
+                    left: 0px;
+                    gap: 35px;
+                    background-color: $threeColor;
+                    font-size: 23px;
+                    transform: translateX(100%);
+                }
+                &.open{
+                    transform: translateX(0%);
+                }
+                .underline::after,a:hover::after{
+                }
+                & footer{       
+                    &.open{
+                        visibility: hidden;
+                    }
+                }
+            }
+            .hamburger{
+                position: relative;
+                // visibility: visible;
+                @include align-element(flex, center, column, center);
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                visibility: visible; 
+                transform: translateX(-100%);
+                & span{
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: $secondColor;
+                    position: absolute;
+                    pointer-events: none;
+                    visibility: visible;
+                }
+                & span:nth-child(1){
+                    transform: translateY(-7px);
+                }
+                & span:nth-child(3){
+                    transform: translateY(7px);
+                }
+                &.open{
+                    background: $threeColor;
+                }
+                &.open span:nth-child(1){
+                    transform: translate(0) rotate(-135deg);
+                }
+                &.open span:nth-child(2){
+                    opacity: 0;
+                }
+                &.open span:nth-child(3){
+                    transform: translate(0) rotate(135deg);
+                }
+            }
+        }
+        
+    }
+    .main{
+        display: none;
+    }
+}
+
+
+// SM small 
+@media (min-width:576px) and (max-width:767.98px) {
+    
+}
+
+
+// LG large Tablette
+@media (min-width:768px) and (min-width:1199.98px) {
+    
+}
+
+
+// XL Computer
+@media (min-width:1200px) and (max-width:1399.98px) {
+    
+}
+
+
+
+
+
+/**
+    RESPONSIVE END
+*/

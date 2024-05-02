@@ -39,7 +39,7 @@ header {
       position: relative; }
     header .navbar .navbar_logo .logo {
       font-weight: 700;
-      font-size: 20px;
+      font-size: 25px;
       color: #242424; }
     header .navbar .navbar_menu {
       width: 500px;
@@ -56,6 +56,12 @@ header {
         height: 2px;
         background-color: #242424;
         box-shadow: 0 2px 0 0; }
+      header .navbar .navbar_menu footer {
+        visibility: hidden;
+        position: absolute; }
+    header .navbar .hamburger {
+      visibility: hidden;
+      position: absolute; }
   header .center-row {
     display: flex;
     justify-content: space-between;
@@ -72,7 +78,7 @@ header {
   .main .section {
     border: solid 1px red;
     width: auto;
-    height: 90vh;
+    height: 87vh;
     scroll-margin-top: 13vh; }
     .main .section.section_home {
       display: flex;
@@ -159,3 +165,70 @@ header {
             .main .section.section_home .content_view .view.view_image .image {
               width: 100%;
               height: 100%; }
+
+/**
+    RESPONSIVE START
+*/
+@media (max-width: 575.98px) {
+  header {
+    height: 10vh; }
+    header .navbar .navbar_logo .logo {
+      font-weight: 700;
+      font-size: 18px; }
+    header .navbar .navbar_menu.XS {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      gap: 35px;
+      background-color: #585858;
+      font-size: 23px;
+      transform: translateX(100%); }
+    header .navbar .navbar_menu.open {
+      transform: translateX(0%); }
+    header .navbar .navbar_menu footer.open {
+      visibility: hidden; }
+    header .navbar .hamburger {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      visibility: visible;
+      transform: translateX(-100%); }
+      header .navbar .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #242424;
+        position: absolute;
+        pointer-events: none;
+        visibility: visible; }
+      header .navbar .hamburger span:nth-child(1) {
+        transform: translateY(-7px); }
+      header .navbar .hamburger span:nth-child(3) {
+        transform: translateY(7px); }
+      header .navbar .hamburger.open {
+        background: #585858; }
+      header .navbar .hamburger.open span:nth-child(1) {
+        transform: translate(0) rotate(-135deg); }
+      header .navbar .hamburger.open span:nth-child(2) {
+        opacity: 0; }
+      header .navbar .hamburger.open span:nth-child(3) {
+        transform: translate(0) rotate(135deg); }
+  .main {
+    display: none; } }
+
+/**
+    RESPONSIVE END
+*/
