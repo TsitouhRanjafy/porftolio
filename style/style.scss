@@ -4,6 +4,7 @@ $secondColor:#242424;
 $threeColor:#585858;
 $width-navbar_menu:500px;
 $height-header:13vh;
+$height-header-XS:10vh;
 
 @mixin padding-left-right{
     padding: 0 5%;
@@ -19,6 +20,10 @@ $height-header:13vh;
 @font-face {
     font-family: "Inter2";
     src: url("../Font/framdit.ttf");
+}
+@font-face {
+    font-family: "banh";
+    src: url(../Font/bahnschrift.ttf);
 }
 @mixin align-element($-display,$-content,$-direction,$-alignitem){
     display: $-display;
@@ -43,6 +48,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 header{
     width: 100%;
     height: $height-header;
@@ -53,6 +59,7 @@ header{
     left: 0;
     box-sizing: border-box;
     flex-direction: column;
+    box-shadow: 0px 1px 4px #c5c5c6;
     
     .navbar {
         display: block;
@@ -68,7 +75,7 @@ header{
         .navbar_logo{
             .logo{
                 font-weight: 700;
-                font-size: 20px;
+                font-size: 25px;
                 color: $secondColor;
             }
         }
@@ -87,7 +94,17 @@ header{
                 height: 2px;
                 background-color: $secondColor;
                 box-shadow: 0 2px 0 0;
+                transition: 400ms;
             }
+            & footer{
+                visibility: hidden;
+                position: absolute;
+            }
+            
+        }
+        .hamburger{
+            visibility: hidden;
+            position: absolute;
         }
     }
     .center-row{
@@ -98,21 +115,22 @@ header{
     }
 }
 .main {
-    border: solid 1px rgb(21, 255, 0);
+    // border: solid 1px rgb(21, 255, 0);
     @include width-height-100();
     margin-top: $height-header; // header engaged 10vh of height
     .section{
-        border: solid 1px red;
+        // border: solid 1px red;
         width: auto;
-        height: 90vh; // header engaged 10vh of height
+        height: 87vh; // header engaged 13vh of height
         scroll-margin-top: $height-header; // for the scroll margin top
         &.section_home{
+            transition: 4s;
             @include align-element(flex, center, column, inherit);
             .content_view{
-                border: solid 2px green ;
+                // border: solid 2px green ;
                 @include align-element(flex, space-between, row, center);            
                 .view{
-                    border: solid 1px aqua;
+                    // border: solid 1px aqua;
                     &.view_ico{
                         @include align-element(flex, space-around, column, center);
                         width: 34px;
@@ -139,8 +157,12 @@ header{
                             .span{
                                 width: 100px;
                                 height: 2px;
-                                background: $secondColor;
+                                background: $threeColor;
                             }
+                            .span:nth-child(2){
+                                display: none;
+                            }
+                            
                             .title{
                                 @include text-config("Inter", $threeColor, 700, 16px);
                             }
@@ -156,11 +178,31 @@ header{
                                 padding: 10px;
                                 border-radius: 8px;
                                 background:$secondColor;
-                                @include text-config("Inter", $main-color, 400, 16px);   
-                                &.btn_contact{
-                                    width: 25%;
-                                }                        
+                                @include text-config("banh", $main-color, 400, 16px);  
+                                transition: 500ms;
+                                cursor: pointer;
+                                transition: 300ms ease;
+                                &.btn_CV{
+                                    margin-left: 10px;
+                                    background: $main-color;
+                                    color: $secondColor;
+                                    border: solid 2px $threeColor ;
+                                    &:active{
+                                        background:$secondColor;
+                                        color: $main-color;
+                                    }
+                                }
                             }
+                        }
+                        .btn_contact:active{
+                            background-color: $main-color;
+                            color: $secondColor;
+                            border: solid 2px $threeColor ;
+                            transition: 0s ; 
+                        }
+                        .btn:hover{
+                            transform: scale(1.05);
+                            transition: 200ms ease;
                         }
                     }
                     &.view_image{
@@ -170,10 +212,15 @@ header{
                         @include align-element(flex, center, row, center);     
                         background-color:#dbdbdb;              
                         overflow: hidden;   
+                        transition: 300ms ease-out;
                         .image{
                             width: 100%;
                             height: 100%;
                         
+                        }
+                        &:active{
+                            background-color: #585858;
+                            transition: 500ms ease-in;
                         }
                     }
                 }
@@ -182,3 +229,210 @@ header{
         }
     }
 }
+
+
+
+
+
+
+
+/**
+    RESPONSIVE START
+*/
+// XS Nokia 5.1 plus
+@media (max-width:575.98px) {
+    html,body{
+        overflow-x: hidden;
+    }
+    header{
+        height: $height-header-XS;
+        .navbar {
+            .navbar_logo{
+                .logo{
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+            }
+            .navbar_menu{
+                &.XS{
+                    position: absolute;
+                    width: 100vw;
+                    height: 100vh;
+                    @include align-element(flex, center, column, center);
+                    box-sizing: border-box;
+                    top: 0px;
+                    right: 0px;
+                    left: 0px;
+                    gap: 35px;
+                    background-color: $threeColor;
+                    opacity: 0.99;
+                    font-size: 23px;
+                    transform: translateX(100%);
+                    transition: transform 200ms ease-in;
+
+                }
+                &.open{
+                    transform: translateX(0%);
+                    transition: transform 200ms ease-out;
+                }
+                .underline::after,a:hover::after{
+                }
+                & footer{       
+                    position: absolute;
+                    @include align-element(flex, center, column, center);
+                    bottom: 50px;
+                    &.open{
+                        visibility: visible;
+                    }
+                    .container_ico{
+                        @include align-element(flex, center, row, center);
+                        gap: 13px;
+                        .ico{
+                            width: 24px;
+                            height: 24px                            ;
+                        }
+                    }
+                    .cpright{
+                        font-size: 13px;
+                        color: $secondColor;
+                    }
+            }   }
+            .hamburger{
+                position: relative;
+                // visibility: visible;
+                @include align-element(flex, center, column, center);
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                visibility: visible; 
+                transition: transform 400ms;
+                & span{
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: $secondColor;
+                    position: absolute;
+                    pointer-events: none;
+                    visibility: visible;
+                    transition:  transform 400ms ease;
+                }
+                & span:nth-child(1){
+                    transform: translateY(-7px);
+                }
+                & span:nth-child(3){
+                    transform: translateY(7px);
+                }
+                &.open{
+                    background: $threeColor;
+                }
+                &.open span:nth-child(1){
+                    transform: translate(0) rotate(-135deg);
+                    transition:  transform 400ms ease;
+                }
+                &.open span:nth-child(2){
+                    transition:  transform 200ms ease;
+                    opacity: 0;
+                }
+                &.open span:nth-child(3){
+                    transform: translate(0) rotate(135deg);
+                    transition:  transform 400ms ease;
+                }
+            }
+        }
+        
+    }
+    .main {
+        .section{
+            &.section_home{
+                .content_view{                    
+                    @include align-element(flex, center, column, center);            
+                    .view{
+                        width: 40%;
+                        &.view_ico{
+                            display: none;                        
+                        }
+                        &.view_salutation{
+                            @include align-element(flex, center, column, center);
+                            padding: 0px 1%;
+                            
+                            .hello{
+                                @include text-config("Inter", $secondColor, 600, 30px);  
+                                margin-bottom: 5px;                         
+                            }
+                            .span_title{
+                                @include align-element(flex, left, row, center);
+                                gap: 5px;
+                                .span{
+                                    width: 100px;
+                                    height: 1px;
+                                }
+                                .span:nth-child(2){
+                                    visibility: visible;
+                                }
+                                .title{
+                                    @include text-config("banh", $threeColor, 600, 13px);
+                                }
+                            }
+                            .paragraphe{
+                                width: 80vw;
+                                @include text-config("banh", $threeColor, 600, 13px);
+                                text-wrap: balance;
+                                text-align: center;
+                                padding: 0px 3px;
+                                @include align-element(flex, center, column, center);
+                            }
+                            .btn_container{
+                                .btn{
+                                    @include text-config("Inter", $main-color, 400, 13px);    
+                                    width: 130px;           
+                                    height: 50px;           
+                                    &.btn_contact{
+                                        width: 130px;
+                                    }
+                                }
+                                .btn:active{
+                                    background-color: $main-color;
+                                    color: $secondColor;
+                                    border: solid 2px $threeColor ;
+                                }
+                            }
+                        }
+                        &.view_image{
+                            width: 60vw;
+                            height: 60vw;
+                            @include align-element(flex, center, row, center);     
+                            border-radius: 54% 39% 18% 76% / 50% 63% 30% 48%; //54% 39% 18% 76% / 50% 63% 25% 48%
+                        }           
+                    }
+    
+                }
+            }
+        } 
+    }
+}
+
+// SM small 
+@media (min-width:576px) and (max-width:767.98px) {
+    
+}
+
+
+// LG large Tablette
+@media (min-width:768px) and (min-width:1029.98px) {
+    
+}
+
+
+// XL Computer
+@media (min-width:1200px) and (max-width:1399.98px) {
+    
+}
+
+
+
+
+
+/**
+    RESPONSIVE END
+*/
+
