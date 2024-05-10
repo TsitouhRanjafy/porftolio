@@ -2,12 +2,13 @@
 $main-color:#F0F0F0;
 $secondColor:#242424;
 $threeColor:#585858;
+$bg-profile:#dbdbdb;
 $width-navbar_menu:500px;
 $height-header:13vh;
 $height-header-XS:10vh;
 
 @mixin padding-left-right{
-    padding: 0 5%;
+    padding: 0 7%;
 }
 @mixin width-height-100{
     width: 100%;    
@@ -37,6 +38,26 @@ $height-header-XS:10vh;
     font-weight: $-weight;
     font-size: $-size;
 }
+@keyframes animationRipplie {
+    0%{
+        width: 0%;
+        height: 0%;
+        opacity: 0.2;
+    }
+    100%{
+        width: 800px;
+        height: 800px;
+        opacity: 0;
+    }
+}
+@keyframes animationUnderline {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
 
 body {
     @include width-height-100();
@@ -54,13 +75,24 @@ header{
     height: $height-header;
     background-color: $main-color;
     position: fixed;
-    @include padding-left-right();
+    padding: 60px 7%;
     right: 0;
     left: 0;
     box-sizing: border-box;
     flex-direction: column;
-    box-shadow: 0px 1px 4px #c5c5c6;
-    
+    // box-shadow: 0px 1px 4px #c5c5c6;
+    z-index: 100;
+    transition: 0.6s linear;
+    &.sticky{
+        padding: 50px 7%;
+        box-shadow: 0px 1px 4px #c5c5c6;
+        transition: 0.6s ;
+        &.sticky2{
+            padding: 40px 7%;
+            box-shadow: 0px 1px 4px #c5c5c6;
+            transition: 0.6s ;
+        }
+    }
     .navbar {
         display: block;
         width: 100%;
@@ -71,12 +103,14 @@ header{
             color: $secondColor;
             font-family: "Inter",sans-serif;
             position: relative;
+            letter-spacing: 2px;
         }
         .navbar_logo{
             .logo{
                 font-weight: 700;
                 font-size: 25px;
                 color: $secondColor;
+                text-transform: uppercase;
             }
         }
         .navbar_menu{
@@ -89,12 +123,12 @@ header{
                 content: "";
                 position: absolute;
                 left: 0;
-                bottom: -2px;
+                bottom: -5px;
                 width: 100%;
                 height: 2px;
                 background-color: $secondColor;
-                box-shadow: 0 2px 0 0;
-                transition: 400ms;
+                // box-shadow: 0 2px 0 0;
+                animation: animationUnderline 150ms linear ;
             }
             & footer{
                 visibility: hidden;
@@ -128,17 +162,22 @@ header{
             @include align-element(flex, center, column, inherit);
             .content_view{
                 // border: solid 2px green ;
-                @include align-element(flex, space-between, row, center);            
+                @include align-element(flex, space-between, row, center);     
+                .view_tmp{
+                    border: solid 2px yellow;
+                }       
                 .view{
                     // border: solid 1px aqua;
                     &.view_ico{
                         @include align-element(flex, space-around, column, center);
                         width: 34px;
                         height: 144px;
+                        user-select: none;
                         .ico{
                             width: 2vw;
                             height: 2vw;
                             cursor: pointer;
+                            user-select: none;
                         }
                     }
                     &.view_salutation{
@@ -158,11 +197,10 @@ header{
                                 width: 100px;
                                 height: 2px;
                                 background: $threeColor;
+                                &.span_2{
+                                    display: none;
+                                }
                             }
-                            .span:nth-child(2){
-                                display: none;
-                            }
-                            
                             .title{
                                 @include text-config("Inter", $threeColor, 700, 16px);
                             }
@@ -187,9 +225,11 @@ header{
                                     background: $main-color;
                                     color: $secondColor;
                                     border: solid 2px $threeColor ;
+                                   
                                     &:active{
                                         background:$secondColor;
                                         color: $main-color;
+                                        position: inherit;
                                     }
                                 }
                             }
@@ -209,19 +249,38 @@ header{
                         width: 350px;
                         height: 350px;
                         border-radius: 54% 39% 18% 76% / 50% 63% 25% 48%;
-                        @include align-element(flex, center, row, center);     
-                        background-color:#dbdbdb;              
+                        // @include align-element(inline-block, center, row, center);     
+                        background-color:$bg-profile;              
                         overflow: hidden;   
                         transition: 300ms ease-out;
+                        position: relative;
+                        z-index: 95;
+                        left: 23px;
+                        display: inline-block;
+                        user-select: none;
                         .image{
+                            position: absolute;
                             width: 100%;
                             height: 100%;
-                        
+                            pointer-events: none;
+                            z-index: 99;
+                            bottom: -30px;
+                            transition: 400ms linear;
                         }
                         &:active{
-                            background-color: #585858;
+                            background-color: $threeColor;
                             transition: 500ms ease-in;
                         }
+                        .span{
+                            position: absolute;
+                            background-color: $secondColor;
+                            border-radius: 50%;
+                            pointer-events: none;
+                            z-index: 96;
+                            transform: translate(-50%,-50%);
+                            animation: animationRipplie 1s linear infinite;
+                        }
+                        
                     }
                 }
 
@@ -306,6 +365,7 @@ header{
                 cursor: pointer;
                 visibility: visible; 
                 transition: transform 400ms;
+                
                 & span{
                     display: block;
                     width: 100%;
@@ -398,10 +458,12 @@ header{
                             }
                         }
                         &.view_image{
+                            position: relative;
                             width: 60vw;
                             height: 60vw;
                             @include align-element(flex, center, row, center);     
                             border-radius: 54% 39% 18% 76% / 50% 63% 30% 48%; //54% 39% 18% 76% / 50% 63% 25% 48%
+                            
                         }           
                     }
     
