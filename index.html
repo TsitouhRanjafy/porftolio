@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dis/style.css">
-    <script src="script/script.js" defer></script>
+    <script src="script/script.js" defer async></script>
     <title>Document</title>
 </head>     
 <body>
+    <div class="progress-bar" id="progressBar"></div>
    <header>
         <nav class="navbar center-row">
             <div class="navbar_logo">
                 <a href="" class="logo">Tsitouh Ranjafy.</a>
             </div>
             <div class="navbar_menu XS  center-row pos-relative" id="nav_links"> <!-- available to open  -->
-                <a href="#home" class="home underline">Home</a>
+                <a href="#home" class="home underline active">Home</a>
                 <a href="#about" class="about">About</a>
                 <a href="#skills" class="skills ">Skills</a>
                 <a href="#project" class="project ">Project</a>
@@ -37,7 +38,7 @@
    </header>
 
    <main class="main">
-        <section class="section section_home" id="home">
+        <section class="section section_home" id=   "home">
             <div class="content_view">
                 <div class="view view_ico">
                     <img src="ico/icons8-insta-104.png" alt="png" srcset="" class="ico ico_insta">
@@ -58,37 +59,172 @@
                     </div>
                 </div>
                 <div class="view view_image" id="profile">
-                        
                     <img src="image/profile2.png" alt="png" srcset="" class="image" id="image">
-                    
                 </div>
             </div>
         </section>
         <section class="section section_about" id="about">
-            <div class="sectionHome_container">
-                
+            <div class="view " id="viewAbout">
+                <div class="view-profile">
+                    <p>About Me</p>
+                    <h1>Senior Mearn Stack Developper </h1>
+                    <div class="container-profile" id="profile">
+                        <img src="image/profile2.png" alt="png" srcset="" class="image">
+                    </div>
+                </div>
+                <div class="view-presentation">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dignissimos tempore blanditiis natus placeat rem nam mollitia sunt alias, laboriosam omnis ratione adipisci quae perspiciatis ab cum repudiandae voluptates officiis!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae et reprehenderit cupiditate at temporibus quaerat doloribus obcaecati itaque repellat. Explicabo veniam voluptatibus nihil dolor quibusdam aliquid laudantium? Mollitia, itaque et!</p>
+                    <h2>Personal Information</h2>
+                    <table>
+                        <tr id="tr">
+                            <td>Name</td>
+                            <td>Tsitohaina</td>
+                        </tr>
+                        <tr id="tr">
+                            <td>Email</td>
+                            <td>ranjafytsito@gmail.com</td>
+                        </tr>
+                        <tr id="tr">
+                            <td>Phone</td>
+                            <td>+261 38 20 002 43</td>
+                        </tr>
+                    </table>
+                    <button>
+                        Download CV
+                    </button>
+                </div>
             </div>
         </section>
         <section class="section section_skills" id="skills">
-            <div class="sectionHome_container">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
+            <p>Professional Skillset</p>
+            <div class="view">
+                <div class="progress " id="skillsProgres0">
+                    <div class="progressbarSkill" id="progressBarSkill0"></div>
+                    <img id="skillsImg0" src="ico/icons8-html-5-250.png" alt="html">
+                </div>
+                <div class="progress" id="skillsProgres1">
+                    <div class="progressbarSkill" id="progressBarSkill1"></div>
+                    <img id="skillsImg1" src="ico/icons8-css-250.png" alt="css">
+                </div>
+                <div class="progress" id="skillsProgres2">
+                    <div class="progressbarSkill" id="progressBarSkill2"></div>
+                    <img id="skillsImg2" src="ico/icons8-javascript-250.png" alt="javascript">
+                </div>
+                <div class="progress" id="skillsProgres3">
+                    <div class="progressbarSkill" id="progressBarSkill3"></div>
+                    <img id="skillsImg3" src="ico/icons8-logo-java-coffee-cup-250.png" alt="java">
+                </div>
+                <div class="progress" id="skillsProgres4">
+                    <div class="progressbarSkill" id="progressBarSkill4"></div>
+                    <img id="skillsImg4" src="ico/icons8-xml-100.png" alt="xml" srcset="">
+                </div>
+                <div class="progress" id="skillsProgres5">
+                    <div class="progressbarSkill" id="progressBarSkill5"></div>
+                    <img id="skillsImg5" src="ico/icons8-bootstrap-250.png" alt="bootstrap">
+                </div>
+                <div class="progress" id="skillsProgres6">
+                    <div class="progressbarSkill" id="progressBarSkill6"></div>
+                    <svg id="skillsImg6" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="250" height="250" viewBox="0,0,255.99263,255.99263"
+                    style="fill:#000000;">
+                    <g fill="#242424" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M34.55469,3.98438c-0.77969,-0.02622 -1.5958,0.10972 -2.41406,0.375c-1.63652,0.53057 -3.35142,1.56451 -5.11133,2.99609c-0.68971,0.56104 -1.38567,1.20236 -2.08398,1.88281c-0.68291,-0.66318 -1.36458,-1.28728 -2.03906,-1.83594c-1.75849,-1.43043 -3.46875,-2.46478 -5.10156,-2.99414c-1.63281,-0.52936 -3.25746,-0.54577 -4.5918,0.22461c-1.33433,0.77038 -2.13227,2.18454 -2.49024,3.86328c-0.35796,1.67874 -0.31853,3.6779 0.04102,5.91602c0.12489,0.7774 0.303,1.59297 0.50586,2.42383c-0.76244,0.23107 -1.50285,0.47402 -2.18945,0.74219c-2.0721,0.80931 -3.78663,1.77754 -5.03516,2.92969c-1.24853,1.15215 -2.05469,2.55049 -2.05469,4.08594c0,1.53545 0.80616,2.93183 2.05469,4.08398c1.24852,1.15215 2.96306,2.12233 5.03516,2.93164c0.73417,0.28675 1.52904,0.54495 2.34961,0.78906c-0.29516,1.10284 -0.53429,2.17303 -0.69727,3.1875c-0.35984,2.23992 -0.39783,4.23933 -0.03906,5.92187c0.35878,1.68255 1.15712,3.10472 2.49805,3.87891c1.34093,0.77419 2.97286,0.75518 4.60938,0.22461c1.63652,-0.53057 3.34947,-1.56256 5.10938,-2.99414c0.68336,-0.55587 1.3746,-1.18998 2.06641,-1.86328c0.69543,0.67736 1.38944,1.31443 2.07617,1.87305c1.75849,1.43043 3.4707,2.46282 5.10352,2.99219c1.63281,0.52936 3.25747,0.54577 4.5918,-0.22461c1.33433,-0.77038 2.13032,-2.18454 2.48828,-3.86328c0.35796,-1.67874 0.31853,-3.67595 -0.04102,-5.91406c-0.16341,-1.01722 -0.4027,-2.09096 -0.69922,-3.19727c0.84768,-0.25006 1.66765,-0.5152 2.42383,-0.81055c2.0721,-0.80931 3.78663,-1.77949 5.03516,-2.93164c1.24853,-1.15215 2.05469,-2.54854 2.05469,-4.08398c0,-1.53545 -0.80616,-2.93379 -2.05469,-4.08594c-1.24853,-1.15215 -2.96306,-2.12037 -5.03516,-2.92969c-0.69645,-0.27202 -1.44823,-0.51813 -2.22266,-0.75195c0.20451,-0.83595 0.38608,-1.65737 0.51172,-2.43945c0.35983,-2.23991 0.39784,-4.24128 0.03906,-5.92383c-0.35877,-1.68255 -1.15907,-3.10277 -2.5,-3.87695c-0.67047,-0.38709 -1.41367,-0.57535 -2.19336,-0.60156zM34.46289,6.01953c0.48926,0.01338 0.90664,0.12981 1.26367,0.33594c0.71406,0.41226 1.24186,1.21462 1.52344,2.53516c0.28158,1.32053 0.27185,3.1047 -0.06055,5.17383c-0.11381,0.70843 -0.27905,1.45924 -0.4668,2.22852c-2.0455,-0.49227 -4.28691,-0.85757 -6.67578,-1.07227c-1.19924,-1.66137 -2.43147,-3.17492 -3.67383,-4.51758c0.65714,-0.64146 1.31002,-1.2414 1.94727,-1.75977c1.62571,-1.32243 3.16481,-2.22226 4.44922,-2.63867c0.6422,-0.20821 1.2041,-0.29854 1.69336,-0.28516zM15.48633,6.02539c0.49209,-0.01374 1.05516,0.07635 1.69922,0.28516c1.28811,0.41761 2.82991,1.31705 4.45703,2.64063c0.62446,0.50796 1.26272,1.09648 1.90625,1.72266c-1.25155,1.35365 -2.49397,2.88031 -3.70117,4.55664c-2.37877,0.21861 -4.61105,0.58588 -6.64648,1.08008c-0.18635,-0.76501 -0.35161,-1.51196 -0.46484,-2.2168c-0.33269,-2.07092 -0.34099,-3.85535 -0.05859,-5.17969c0.28239,-1.32434 0.8145,-2.13276 1.53516,-2.54883c0.36032,-0.20803 0.78135,-0.32611 1.27344,-0.33984zM24.97656,12.14258c0.81461,0.88649 1.62939,1.85658 2.4375,2.90039c-0.79403,-0.03311 -1.59777,-0.05274 -2.41406,-0.05274c-0.83254,0 -1.65159,0.02026 -2.46094,0.05469c0.80829,-1.04462 1.62269,-2.01518 2.4375,-2.90234zM25,17.00977c1.35989,0 2.68535,0.05588 3.97461,0.15039c0.88712,1.27416 1.75404,2.6259 2.58008,4.05664c0.72582,1.25715 1.38264,2.51237 1.98047,3.75195c-0.60414,1.25603 -1.27197,2.52822 -2.00781,3.80273c-0.64774,1.12191 -1.32415,2.18746 -2.01172,3.21484c-1.45631,0.12172 -2.96532,0.18945 -4.51562,0.18945c-1.58762,0 -3.13054,-0.07175 -4.61914,-0.19922c-0.67612,-1.01261 -1.34112,-2.06202 -1.97852,-3.16602c-0.73416,-1.2716 -1.39877,-2.54147 -2.00195,-3.79492c0.60572,-1.26053 1.27331,-2.53745 2.01172,-3.81641c0.82171,-1.42324 1.6861,-2.76716 2.56836,-4.03516c1.30314,-0.09664 2.64398,-0.1543 4.01953,-0.1543zM31.54883,17.41016c1.64847,0.20568 3.19626,0.49125 4.63672,0.83398c-0.42742,1.40115 -0.95389,2.86467 -1.5918,4.375c-0.41418,-0.79842 -0.84315,-1.59956 -1.30664,-2.40234c-0.56169,-0.97287 -1.1467,-1.90038 -1.73828,-2.80664zM18.34375,17.42578c-0.5791,0.88932 -1.14891,1.7988 -1.69922,2.75195c-0.46944,0.81309 -0.90731,1.625 -1.32617,2.43359c-0.6324,-1.50125 -1.1557,-2.95645 -1.58008,-4.34961c1.42972,-0.34336 2.96848,-0.62791 4.60547,-0.83594zM38.16406,18.77539c0.70888,0.21449 1.3935,0.43832 2.02148,0.68359c1.91015,0.74606 3.4211,1.62951 4.40039,2.5332c0.97929,0.90369 1.4043,1.76551 1.4043,2.60156c0,0.83605 -0.42501,1.69787 -1.4043,2.60156c-0.97929,0.90369 -2.49024,1.78714 -4.40039,2.5332c-0.69785,0.27256 -1.46459,0.51973 -2.26172,0.75391c-0.56863,-1.75878 -1.29442,-3.59365 -2.1582,-5.4668c0.99316,-2.15054 1.79546,-4.24734 2.39844,-6.24023zM11.80273,18.78516c0.59607,1.97301 1.38808,4.04896 2.36719,6.17773c-0.86945,1.88406 -1.59883,3.72936 -2.16992,5.49805c-0.76904,-0.22802 -1.50979,-0.46849 -2.18555,-0.73242c-1.91015,-0.74606 -3.4211,-1.62951 -4.40039,-2.5332c-0.97929,-0.90369 -1.4043,-1.76551 -1.4043,-2.60156c0,-0.83605 0.42501,-1.69787 1.4043,-2.60156c0.97929,-0.90369 2.49024,-1.78714 4.40039,-2.5332c0.61832,-0.2415 1.29146,-0.46215 1.98828,-0.67383zM25,20c-2.74958,0 -5,2.25042 -5,5c0,2.74958 2.25042,5 5,5c2.74958,0 5,-2.25042 5,-5c0,-2.74958 -2.25042,-5 -5,-5zM15.3418,27.36523c0.4207,0.81262 0.85823,1.62805 1.33008,2.44531c0.36917,0.63943 0.7462,1.26185 1.12891,1.87305c-1.34296,-0.18622 -2.61955,-0.42199 -3.81836,-0.70117c0.38123,-1.16761 0.83732,-2.37963 1.35938,-3.61719zM34.61914,27.36523c0.52414,1.24049 0.98047,2.45445 1.36328,3.625c-1.20261,0.27886 -2.48313,0.51382 -3.83008,0.69922c0.38773,-0.61867 0.77064,-1.24888 1.14453,-1.89648c0.46838,-0.81125 0.90421,-1.62105 1.32227,-2.42773zM13.40625,32.92383c1.80982,0.42874 3.77147,0.75808 5.85156,0.97266c1.38857,2.00838 2.83516,3.81301 4.29102,5.39063c-0.65102,0.63475 -1.29626,1.23047 -1.92773,1.74414c-1.62571,1.32243 -3.16677,2.22031 -4.45117,2.63672c-1.28441,0.41641 -2.24298,0.36148 -2.95703,-0.05078c-0.71406,-0.41226 -1.2399,-1.21462 -1.52149,-2.53516c-0.28158,-1.32053 -0.2738,-3.10275 0.05859,-5.17187c0.15079,-0.93866 0.37615,-1.94378 0.65625,-2.98633zM36.56055,32.93164c0.28244,1.04891 0.50847,2.05771 0.66016,3.00195c0.33269,2.07092 0.34099,3.85535 0.05859,5.17969c-0.28239,1.32434 -0.8106,2.13471 -1.53125,2.55078c-0.72065,0.41607 -1.68845,0.47035 -2.97656,0.05273c-1.28811,-0.41761 -2.82991,-1.31705 -4.45703,-2.64062c-0.63601,-0.51736 -1.28573,-1.11791 -1.94141,-1.75781c1.46562,-1.58377 2.92242,-3.3976 4.32031,-5.41797c2.08534,-0.21314 4.05243,-0.54052 5.86719,-0.96875zM21.86719,34.10156c1.02676,0.05596 2.06706,0.09375 3.13281,0.09375c1.0305,0 2.03706,-0.03552 3.03125,-0.08789c-1.01629,1.37117 -2.05222,2.61773 -3.08398,3.74023c-1.03114,-1.1249 -2.06512,-2.37369 -3.08008,-3.74609z"></path></g></g>
+                    </svg>
+                </div>
+                <div class="progress" id="skillsProgres7">
+                    <div class="progressbarSkill" id="progressBarSkill7"></div>
+                    <img id="skillsImg7" src="ico/icons8-git-250.png" alt="git">
+                </div>
+            </div>
+            <p>Tools I use </p>
+            <div class="view">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="250" height="250" viewBox="0,0,255.99263,255.99263"
+style="fill:#000000;">
+<g fill="#242424" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M19.852,7.761l-15,2.25c-0.49,0.074 -0.852,0.494 -0.852,0.989v12c0,0.553 0.448,1 1,1h15c0.552,0 1,-0.447 1,-1v-14.25c0,-0.291 -0.127,-0.567 -0.348,-0.758c-0.22,-0.189 -0.513,-0.271 -0.8,-0.231zM45.652,4.242c-0.22,-0.189 -0.512,-0.271 -0.801,-0.231l-21,3.15c-0.489,0.074 -0.851,0.494 -0.851,0.989v14.85c0,0.553 0.448,1 1,1h21c0.552,0 1,-0.447 1,-1v-18c0,-0.291 -0.127,-0.567 -0.348,-0.758zM20,26h-15c-0.552,0 -1,0.447 -1,1v12c0,0.495 0.362,0.915 0.852,0.989l15,2.25c0.05,0.007 0.099,0.011 0.148,0.011c0.238,0 0.47,-0.085 0.652,-0.242c0.221,-0.191 0.348,-0.467 0.348,-0.758v-14.25c0,-0.553 -0.448,-1 -1,-1zM45,26h-21c-0.552,0 -1,0.447 -1,1v14.85c0,0.495 0.362,0.915 0.852,0.989l21,3.15c0.049,0.007 0.099,0.011 0.148,0.011c0.238,0 0.47,-0.085 0.652,-0.242c0.221,-0.191 0.348,-0.467 0.348,-0.758v-18c0,-0.553 -0.448,-1 -1,-1z"></path></g></g>
+</svg>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="250" height="250" viewBox="0,0,255.99263,255.99263"
+style="fill:#000000;">
+<g fill="#242424" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M35.44531,2.01172c-0.3885,0.01362 -0.77605,0.11488 -1.12305,0.29688c0.905,0.448 1.54344,1.33281 1.64844,2.38281c0.018,0.126 0.0293,0.24087 0.0293,0.29688v40c0,1.186 -0.69341,2.20245 -1.69141,2.68945c0.364,0.199 0.77041,0.31055 1.19141,0.31055c0.373,0 0.72497,-0.08642 1.04297,-0.23242l0.00195,0.00391c1.608,-0.832 9.64736,-4.99506 9.94336,-5.16406c0.933,-0.535 1.51172,-1.53442 1.51172,-2.60742v-30c0,-0.998 -0.49427,-1.92638 -1.32227,-2.48437c-0.32,-0.217 -10.0957,-5.26758 -10.0957,-5.26758l-0.00195,0.00391c-0.356,-0.1675 -0.74627,-0.24214 -1.13477,-0.22852zM33,3.98828c-0.25588,0 -0.51203,0.09747 -0.70703,0.29297c0,0 -5.7245,6.43759 -12.0625,13.55859l7.49414,6.13086l6.27539,-5.28516v-13.69727c0,-0.256 -0.09797,-0.51203 -0.29297,-0.70703c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297zM8,10.98828c-0.156,0 -0.44614,0.00056 -1.74414,0.60156c-0.715,0.331 -3.20508,1.63867 -3.20508,1.63867c-0.33,0.179 -0.5962,0.4592 -0.7832,0.7832c0.076,-0.012 0.15147,-0.02344 0.23047,-0.02344h0.00195c0.668,0 1.07766,0.46619 1.22266,0.61719c0,0 28.20731,30.72684 28.57031,31.08984c0.195,0.195 0.44908,0.29297 0.70508,0.29297c0.256,0 0.51203,-0.09797 0.70703,-0.29297c0.195,-0.195 0.29492,-0.45103 0.29492,-0.70703v-13.33008c0,0 -24.46625,-19.99639 -24.65625,-20.15039c-0.368,-0.334 -0.84675,-0.51953 -1.34375,-0.51953zM2.19922,15.98828c-0.11,0 -0.19922,0.09017 -0.19922,0.20117v18.60547c0,0.107 0.08731,0.19531 0.19531,0.19531c0.056,0 0.10562,-0.02545 0.14063,-0.06445l5.66406,-6.28711v-6.63086l-5.6582,-5.96094c-0.036,-0.036 -0.08758,-0.05859 -0.14258,-0.05859zM12.25391,26.80273c0,0 -8.59536,9.65005 -8.69336,9.74805c-0.271,0.271 -0.64555,0.4375 -1.06055,0.4375c-0.078,0 -0.15352,-0.00948 -0.22852,-0.02148c0.202,0.351 0.49823,0.64036 0.86523,0.81836l-0.00391,0.00586c0.87,0.442 3.74114,1.90069 4.11914,2.05469c0.238,0.095 0.48905,0.14258 0.74805,0.14258c0.347,0 0.69005,-0.08962 0.99805,-0.26562c0.023,-0.013 8.5293,-7.16992 8.5293,-7.16992z"></path></g></g>
+</svg>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="250" height="250" viewBox="0,0,255.99263,255.99263"
+style="fill:#000000;">
+<g fill="#242424" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M46,11l-2.96,-3.96c-1.22,-1.22 -3.08,-1.52 -4.62,-0.75l-1.42,0.71l-5,-5h-14l-5,5l-1.42,-0.71c-1.54,-0.77 -3.4,-0.47 -4.62,0.75l-2.96,3.96l2,3l-2,4l5.77,17.47c0.79,2.28 2.38,4.19 4.47,5.38l10.76,6.15l10.76,-6.15c2.09,-1.19 3.68,-3.1 4.47,-5.38l5.77,-17.47l-2,-4zM25,40l-6,-6c0,0 5,-3 6,-3c1,0 6,3 6,3zM38.68,18.76l-4.68,6.24l0.57,0.85c0.41,0.61 0.61,1.32 0.61,2.02c0,0.78 -0.24,1.55 -0.73,2.19c-0.52,0.7 -1.29,1.26 -2.04,1.59c-0.51,0.23 -1.01,0.35 -1.41,0.35c-0.9,0 -2.617,-1.621 -5,-3.331v-1.102l4.515,-2.709c0.369,-0.221 0.555,-0.654 0.462,-1.074l-1.459,-6.566c0.174,-0.406 0.444,-0.744 0.845,-0.964l5.637,-2.254l-3,-1h-2l-0.014,0.014c-0.1,0.002 -0.202,0.004 -0.303,0.038l-3,1c-0.486,0.162 -0.771,0.666 -0.66,1.166l1.844,8.296l-3.867,2.32l-3.868,-2.321l1.844,-8.296c0.111,-0.5 -0.174,-1.003 -0.66,-1.166l-3,-1c-0.101,-0.034 -0.202,-0.036 -0.303,-0.038l-0.013,-0.013h-2l-3,1l5.638,2.253c0.401,0.22 0.671,0.558 0.845,0.964l-1.459,6.566c-0.093,0.42 0.092,0.853 0.461,1.074l4.515,2.709v1.126c-2.447,1.744 -4.116,3.308 -5,3.308c-0.4,0 -0.9,-0.12 -1.41,-0.35c-0.75,-0.33 -1.52,-0.89 -2.04,-1.59c-0.93,-1.23 -0.98,-2.92 -0.12,-4.21l0.57,-0.85l-4.68,-6.24c-0.79,-1.05 -0.8,-2.48 -0.04,-3.55l3.72,-6.21l2.73,0.55c0.38,0.08 0.77,0.11 1.16,0.11c1.08,0 2.16,-0.29 3.1,-0.85c0.93,-0.56 1.97,-0.84 3.01,-0.84c1.04,0 2.08,0.28 3.01,0.84c1.28,0.76 2.8,1.03 4.26,0.74l2.73,-0.55l3.72,6.21c0.76,1.07 0.75,2.5 -0.04,3.55z"></path></g></g>
+</svg>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="250" height="250" viewBox="0 0 50 50">
+                        <path d="M25 2v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 18v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 34v7c0 3.855-3.145 7-7 7s-7-3.145-7-7c0-3.855 3.145-7 7-7H25zM41 9c0 3.855-3.145 7-7 7h-7V2h7C37.855 2 41 5.145 41 9zM34 18A7 7 0 1034 32 7 7 0 1034 18z"></path>
+                        </svg>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="250" height="250" viewBox="0,0,255.99263,255.99263"
+style="fill:#000000;">
+<g fill="#242424" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,0c-12.683,0 -23,10.318 -23,23c0,6.502 2.71927,12.37355 7.07227,16.56055l-1.95312,3.41797c-0.173,0.302 -0.26172,0.64419 -0.26172,0.99219v4.0293c0,0.718 0.38481,1.38033 1.00781,1.73633c0.307,0.176 0.65019,0.26367 0.99219,0.26367c0.351,0 0.70067,-0.09234 1.01367,-0.27734l3.47461,-2.04492c0.3,-0.177 0.5487,-0.43042 0.7207,-0.73242l1.66406,-2.91211c2.839,1.257 5.97053,1.9668 9.26953,1.9668c3.299,0 6.43053,-0.7098 9.26953,-1.9668l1.66406,2.91211c0.173,0.302 0.4207,0.55542 0.7207,0.73242l3.47461,2.04492c0.313,0.185 0.66267,0.27734 1.01367,0.27734c0.342,0 0.68519,-0.08767 0.99219,-0.26367c0.623,-0.356 1.00781,-1.01933 1.00781,-1.73633v-4.0293c0,-0.348 -0.08972,-0.69019 -0.26172,-0.99219l-1.95312,-3.41797c4.353,-4.187 7.07227,-10.05855 7.07227,-16.56055c0,-12.682 -10.317,-23 -23,-23zM23,9h4c0.552,0 1,0.448 1,1v3h2c1.105,0 2,0.895 2,2v8.33398c0,0.266 -0.10592,0.52098 -0.29492,0.70898l-5.45508,5.42383c-0.713,0.709 -1.86427,0.70614 -2.57227,-0.00586l-5.38672,-5.41797c-0.186,-0.188 -0.29102,-0.44008 -0.29102,-0.70508v-8.33789c0,-1.105 0.895,-2 2,-2h2v-3c0,-0.552 0.448,-1 1,-1zM25,17c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3zM36.94922,24h4c-0.263,4.226 -2.1738,8.01066 -5.0918,10.72266l0.00195,0.00195c-0.983,0.913 -2.07867,1.70366 -3.26367,2.34766l-0.00391,-0.00586c-2.26,1.228 -4.8428,1.93359 -7.5918,1.93359c-2.749,0 -5.3328,-0.70559 -7.5918,-1.93359l-5.07812,8.88672l-3.47266,2.04688v-4.0293l9.64453,-16.87891l2.92578,2.94141l-2.03906,3.56641c1.675,0.892 3.58433,1.40039 5.61133,1.40039c2.027,0 3.93437,-0.51034 5.60938,-1.40234l-0.00586,-0.00781c1.195,-0.64 2.27636,-1.47775 3.19336,-2.46875v-0.00586l0.00781,0.01367c1.762,-1.91 2.91653,-4.38891 3.14453,-7.12891zM31.49023,27.07617l1.25977,2.20508c-0.86,1.056 -1.92772,1.93527 -3.13672,2.57227l-1.06055,-1.85547zM36.87695,36.50195l4.26758,7.46875v4.0293h-0.00195l-3.47266,-2.04687l-4.08203,-7.14453c1.182,-0.646 2.28406,-1.42164 3.28906,-2.30664z"></path></g></g>
+</svg>
+                </div>
             </div>
         </section>
         <section class="section section_project" id="project">
-            <div class="sectionHome_container">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
+            <p class="title">My Recent Works</p>
+            <p class="here">Here are a few projects I've worked on recently</p>
+            <div class="viewContainer">
+                <img src="ico/icons8-chevron-carré-gauche-100.png" id="prevBtn" class="prevBtn"/>
+                <div class="view" id="containerCard">
+                    <div class="projetView">
+                        <img src="image/Annotation 2024-05-17 133136.png" alt="">
+                        <h3>FASE WILAYAH-XII</h3>
+                        <p>dolores ducimus veniam ullam temporibus, eligendi libero! Nemo suscipit consectetur molestias sit totam! Illum, atque deleniti!</p>
+                        <button>Demo</button>
+                    </div>
+                    <div class="projetView">
+                        <img src="image/Annotation 2024-05-17 133136.png" alt="">
+                        <h3>FASE WILAYAH-XII</h3>
+                        <p>dolores ducimus veniam ullam temporibus, eligendi libero! Nemo suscipit consectetur molestias sit totam! Illum, atque deleniti!</p>
+                        <button>Demo</button>
+                    </div>
+                    <div class="projetView">
+                        <img src="image/Annotation 2024-05-17 133136.png" alt="">
+                        <h3>FASE WILAYAH-XII</h3>
+                        <p>dolores ducimus veniam ullam temporibus, eligendi libero! Nemo suscipit consectetur molestias sit totam! Illum, atque deleniti!</p>
+                        <button>Demo</button>
+                    </div>
+                    <div class="projetView">
+                        <img src="image/Annotation 2024-05-17 133136.png" alt="">
+                        <h3>FASE WILAYAH-XII</h3>
+                        <p>dolores ducimus veniam ullam temporibus, eligendi libero! Nemo suscipit consectetur molestias sit totam! Illum, atque deleniti!</p>
+                        <button>Demo</button>
+                    </div>
+                    <div class="projetView">
+                        <img src="image/Annotation 2024-05-17 133136.png" alt="">
+                        <h3>FASE WILAYAH-XII</h3>
+                        <p>dolores ducimus veniam ullam temporibus, eligendi libero! Nemo suscipit consectetur molestias sit totam! Illum, atque deleniti!</p>
+                        <button>Demo</button>
+                    </div>
+                    <div class="projetView">
+                        <img src="image/Annotation 2024-05-17 133136.png" alt="">
+                        <h3>FASE WILAYAH-XII</h3>
+                        <p>dolores ducimus veniam ullam temporibus, eligendi libero! Nemo suscipit consectetur molestias sit totam! Illum, atque deleniti!</p>
+                        <button>Demo</button>
+                    </div>
+                </div>
+                <img src="ico/icons8-next-100.png" id="nextBtn" class="nextBtn"/>
             </div>
+            
         </section>
         <section class="section section_contact" id="contact">
-            <div class="sectionHome_container">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-            </div>
+            <p>Contact</p>
+            <p>Get in Touch</p>
+            <form action="" method="post">
+                <input type="email" placeholder="Email" id="email">
+                <input type="text   " placeholder="Username" id="name">
+                <input type="tel" placeholder="Phone" id="phone">
+                <textarea name="message" id="message"  placeholder="message"></textarea>
+                <input type="submit" value="submit" class="submit">
+            </form>
         </section>
    </main>
 

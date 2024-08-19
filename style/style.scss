@@ -1,8 +1,8 @@
 /*  Initialisation  */
-$main-color:#F0F0F0;
-$secondColor:#242424;
-$threeColor:#585858;
-$bg-profile:#dbdbdb;
+$main-color:#0d1937;
+$secondColor:#cacaca;
+$threeColor:#3f73e3;
+$bg-profile:#182643;
 $width-navbar_menu:500px;
 $height-header:13vh;
 $height-header-XS:10vh;
@@ -18,14 +18,6 @@ $height-header-XS:10vh;
     font-family: "Inter";
     src: url("../Font/framd.ttf");
 }
-@font-face {
-    font-family: "Inter2";
-    src: url("../Font/framdit.ttf");
-}
-@font-face {
-    font-family: "banh";
-    src: url(../Font/bahnschrift.ttf);
-}
 @mixin align-element($-display,$-content,$-direction,$-alignitem){
     display: $-display;
     justify-content:$-content;
@@ -38,6 +30,46 @@ $height-header-XS:10vh;
     font-weight: $-weight;
     font-size: $-size;
 }
+@mixin containerProfile{
+    width: 350px;
+    height: 350px;
+    // border-radius: 54% 39% 18% 76% / 50% 63% 25% 48%;    
+    border-radius: 10%;
+    background-color:$bg-profile;              
+    overflow: hidden;   
+    transition: 300ms ease-out;
+    position: relative;
+    display: inline-block;
+    user-select: none;
+}
+@mixin image{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        bottom: -30px;
+        transition: 400ms linear;
+        filter: drop-shadow(40px -20px 50px black);
+}
+@mixin btn{
+    width: 161px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 8px;
+    border: solid 1px $secondColor ;
+    background:$bg-profile;
+    @include text-config("Inter", $main-color, 400, 16px);  
+    transition: 500ms;
+    cursor: pointer;
+    transition: 300ms ease;
+    &:active{
+        background-color: $main-color;
+        color: $threeColor;
+        border: solid 2px $threeColor ;
+        transition: 0s ; 
+    }
+}
+
 @keyframes animationRipplie {
     0%{
         width: 0%;
@@ -58,6 +90,19 @@ $height-header-XS:10vh;
         width: 100%;
     }
 }
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        width: 10px;
+        opacity: 1;
+    }
+}
+::-webkit-scrollbar{
+    display: none;
+}
 
 body {
     @include width-height-100();
@@ -68,6 +113,16 @@ body {
     /*border: solid 1px red;*/
     display: flex;
     flex-direction: column;
+    .progress-bar{
+        width: 4px;
+        height: 10vh;
+        background: $threeColor;
+        right: 0;
+        top: 0;
+        position: fixed;
+        z-index: 100;
+        box-shadow: -2px 0px 13px $threeColor;
+    }
 }
 
 header{
@@ -81,15 +136,15 @@ header{
     box-sizing: border-box;
     flex-direction: column;
     // box-shadow: 0px 1px 4px #c5c5c6;
-    z-index: 100;
+    z-index: 98;
     transition: 0.6s linear;
     &.sticky{
         padding: 50px 7%;
-        box-shadow: 0px 1px 4px #c5c5c6;
+        box-shadow: 0px 1px 4px #050914;
         transition: 0.6s ;
         &.sticky2{
             padding: 40px 7%;
-            box-shadow: 0px 1px 4px #c5c5c6;
+            box-shadow: 0px 1px 4px #050811;
             transition: 0.6s ;
         }
     }
@@ -104,6 +159,9 @@ header{
             font-family: "Inter",sans-serif;
             position: relative;
             letter-spacing: 2px;
+            &.active,&:hover{
+                color: $threeColor;
+            }
         }
         .navbar_logo{
             .logo{
@@ -126,7 +184,7 @@ header{
                 bottom: -5px;
                 width: 100%;
                 height: 2px;
-                background-color: $secondColor;
+                background-color: $threeColor;
                 // box-shadow: 0 2px 0 0;
                 animation: animationUnderline 150ms linear ;
             }
@@ -153,7 +211,7 @@ header{
     @include width-height-100();
     margin-top: $height-header; // header engaged 10vh of height
     .section{
-        // border: solid 1px red;
+        // border: solid 1px black;
         width: auto;
         height: 87vh; // header engaged 13vh of height
         scroll-margin-top: $height-header; // for the scroll margin top
@@ -164,7 +222,7 @@ header{
                 // border: solid 2px green ;
                 @include align-element(flex, space-between, row, center);     
                 .view_tmp{
-                    border: solid 2px yellow;
+                    // border: solid 2px yellow;
                 }       
                 .view{
                     // border: solid 1px aqua;
@@ -188,7 +246,8 @@ header{
                         gap: 8px;           
                         .hello{
                             @include text-config("Inter", $secondColor, 700, 40px);  
-                            margin-bottom: 5px                          
+                            margin-bottom: 5px;
+                            letter-spacing: 2px;                   
                         }
                         .span_title{
                             @include align-element(flex, left, row, center);
@@ -197,79 +256,53 @@ header{
                                 width: 100px;
                                 height: 2px;
                                 background: $threeColor;
+                                margin-right: 15px;
                                 &.span_2{
                                     display: none;
                                 }
                             }
                             .title{
-                                @include text-config("Inter", $threeColor, 700, 16px);
+                                @include text-config("Inter", $threeColor, 500, 18px);
+                                word-spacing: 3px;
+                                letter-spacing: 3px;
                             }
                         }
                         .paragraphe{
-                            @include text-config("Inter", $threeColor, 600, 16px);
+                            @include text-config("Inter", $threeColor, 500, 16px);
                             margin-top:5px;
+                            letter-spacing: 1px;
+                            word-spacing: 3px;
                         }
                         .btn_container{
                             .btn{
-                                width: 161px;
-                                height: 60px;
-                                padding: 10px;
-                                border-radius: 8px;
-                                background:$secondColor;
-                                @include text-config("banh", $main-color, 400, 16px);  
-                                transition: 500ms;
-                                cursor: pointer;
-                                transition: 300ms ease;
+                                @include btn();
                                 &.btn_CV{
                                     margin-left: 10px;
                                     background: $main-color;
-                                    color: $secondColor;
-                                    border: solid 2px $threeColor ;
-                                   
+                                    color: $secondColor;;
+                                    border: solid 1px $secondColor ;
                                     &:active{
                                         background:$secondColor;
                                         color: $main-color;
                                         position: inherit;
                                     }
                                 }
+                                color: $secondColor;
                             }
-                        }
-                        .btn_contact:active{
-                            background-color: $main-color;
-                            color: $secondColor;
-                            border: solid 2px $threeColor ;
-                            transition: 0s ; 
-                        }
-                        .btn:hover{
-                            transform: scale(1.05);
-                            transition: 200ms ease;
                         }
                     }
                     &.view_image{
-                        width: 350px;
-                        height: 350px;
-                        border-radius: 54% 39% 18% 76% / 50% 63% 25% 48%;
-                        // @include align-element(inline-block, center, row, center);     
-                        background-color:$bg-profile;              
-                        overflow: hidden;   
-                        transition: 300ms ease-out;
-                        position: relative;
+                        @include containerProfile();
                         z-index: 95;
-                        left: 23px;
-                        display: inline-block;
-                        user-select: none;
                         .image{
-                            position: absolute;
-                            width: 100%;
-                            height: 100%;
-                            pointer-events: none;
-                            z-index: 99;
-                            bottom: -30px;
-                            transition: 400ms linear;
+                            @include image();
+                            z-index: 97;
                         }
+                        
                         &:active{
                             background-color: $threeColor;
                             transition: 500ms ease-in;
+                            z-index: 97;
                         }
                         .span{
                             position: absolute;
@@ -284,6 +317,299 @@ header{
                     }
                 }
 
+            }
+        }
+        &.section_about{
+            // overflow: hidden;
+            @include align-element(flex, center, center, center);
+            .view{
+                // border: solid 2px red;
+                display: flex;
+                .view-profile{
+                    // border: solid 1px green;
+                    @include align-element(flex, center,column, left);
+                    width: 100%;
+                    p{
+                        @include text-config("Inter", $secondColor, 500, 15px);
+                    }
+                    h1{
+                        @include text-config("Inter", $secondColor, 700, 30px);
+                        word-spacing: 10px;
+                        margin-top: 0px;
+                        letter-spacing: 1px;
+                    }
+                    .image{
+                        @include image();
+                    }
+                    .container-profile{
+                        @include containerProfile();
+                    }
+                }
+                .view-presentation{
+                    padding-left: 30px;
+                    // border: solid 1px yellow;
+                    p{
+                        @include text-config("Inter", $threeColor, 500, 16px);
+                        margin-top:5px;
+                        letter-spacing: 1px;
+                        word-spacing: 3px;
+                    }
+                    h2{
+                        @include text-config("Inter", $secondColor, 500, 20px);
+                    }
+                    table{
+                        width: 100%;
+                        // border: solid 1px aqua;
+                        margin-bottom: 8px;
+                        background: $bg-profile;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        tr{
+                            @include align-element(flex, space-between, row, center);
+                            padding: 10px;
+                            border-bottom: solid 1px $main-color;
+                            overflow: hidden;
+                            &:hover{
+                                background: #747474; 
+                                border-radius: 8px;
+                            }
+                            td{
+                                @include text-config("Inter", $secondColor, 400, 13px);
+                            }
+                            &:active{
+                                background: $secondColor;
+                            }
+                        }
+                    }
+                    button{
+                        @include btn();
+                        color: $secondColor;
+                    }
+                }
+            }
+        }
+        &.section_skills{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                @include text-config("Inter", $secondColor, 600, 20px);
+                text-align: center;
+            }
+            .view{
+                // border: solid  1px aqua;
+                display: flex;
+                // grid-template-columns: repeat(5,1fr);
+                place-items: center;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 34px;
+                width: 100%;
+                div{
+                    width: 200px;
+                    min-height: 100px;
+                    border: solid 2px $secondColor ;
+                    border-radius: 8px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 1 0 200px;
+                    transition: all 200ms linear;
+                    &:hover{
+                        box-shadow: 0px 1px 4px $secondColor;
+                        transition: all 200ms linear;
+                    }
+                    img,svg{
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .progressbarSkill{
+                        position: absolute;
+                        height: 100px;
+                        background: $threeColor;
+                        border: none;
+                        border-radius: 4px;
+                        z-index: 30;
+                        transition: all 10s linear;
+                        &::after{
+                            content: '80%' ;
+                            font-size: 20px;
+                            color: $main-color;
+                            font-family: "inter";
+                        }
+                    }
+                    #progressBarSkill0::after{
+                        content: '80%' ;
+                    }
+                    #progressBarSkill1::after{
+                        content:  '70%';   
+                    }
+                    #progressBarSkill2::after{
+                        content:  '40%';
+                    }
+                    #progressBarSkill3::after{
+                        content:  '15%';
+                    }
+                    #progressBarSkill4::after{
+                        content:  '30%';
+                    }
+                    #progressBarSkill5::after{
+                        content:  '15%';
+                    }
+                    #progressBarSkill6::after{
+                        content:  '5%';
+                    }
+                    #progressBarSkill7::after{
+                        content:  '30%';
+                    }
+                    .pourcentage{
+                        position: relative;
+                        margin: auto;
+                        z-index: 40;
+                        display: none;
+                    }
+                }
+            }
+        }
+        &.section_project{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            p.title{
+                @include text-config("Inter", $secondColor, 600, 20px);
+                margin-bottom: 0;
+            }
+            p.here{
+                @include text-config("Inter", $secondColor, 500, 15px);
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+            .viewContainer{
+                @include align-element(flex, center, row, center);
+                .prevBtn,.nextBtn{
+                    width: 50px;
+                    height: 50px;
+                    @include align-element(flex, center, row, center);
+                    cursor: pointer;
+                    background: $main-color;
+                    z-index: 1;
+                }
+                .prevBtn{
+                    transform: translateX(50%);
+                    &:active{
+                        transform: translateX(40%);
+                    }
+                }
+                .nextBtn{
+                    transform: translateX(-50%);
+                    &:active{
+                        transform: translateX(-40%);
+                    }
+                }
+                .view{
+                    display: flex;
+                    flex-direction: row;
+                    overflow-x: scroll;
+                    scroll-snap-type: x mandatory;
+                    gap: 50px;
+                    place-items: center;
+                    width: 80vw;
+                    height: 70vh;
+                    .projetView{
+                        width: 100%;
+                        flex: 0 0 250px;
+                        overflow-x: auto;
+                        border: solid 1px $threeColor;
+                        border-radius: 10px;    
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        padding: 15px;
+                        scroll-snap-align: center;
+                        transition: 400ms;
+                        &:hover{
+                            transform: translateY(-13px);
+                            transition: 400ms;  
+                            border: solid 1px $secondColor;
+                            box-shadow: 0px 1px 4px $threeColor;
+                            
+                        }
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                        h3{
+                            @include text-config("Inter", $secondColor, 600, 15px);
+                            cursor: default;
+                            z-index: 0;
+                        }
+                        p{
+                            text-align: justify;
+                            @include text-config("Inter", $secondColor, 500, 16px);
+                            cursor: default;
+                        }
+                        button{
+                            @include btn();
+                            width: 80px;
+                            height: 40px; 
+                            background: $main-color;
+                            color: $secondColor;
+                            border: solid 1px $threeColor ;
+                            &:active{
+                                background:$secondColor;
+                                color: $main-color;
+                                position: inherit;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        &.section_contact{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p:nth-child(1){
+                @include text-config("Inter", $secondColor, 500, 15px);
+                margin-bottom: 0;
+            }
+            p:nth-child(2){
+                @include text-config("Inter", $secondColor, 600, 30px);
+                margin-top: 0;
+            }
+                
+            form{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                // border: solid 1px red;
+                gap: 20px;
+                input,textarea{
+                    width: 50%;
+                    height: 30px;
+                    font-size: 13px;
+                    border: solid 2px $secondColor;
+                    border-radius: 5px;
+                    background-color: $bg-profile;
+                    color: $secondColor;
+                    &.submit{
+                        @include btn();
+                        width: 100px;
+                        height: 50px;
+                        color: $secondColor;
+                    }
+                }
+                textarea{
+                    height: 50px;
+                    resize: none;
+                }
             }
         }
     }
@@ -430,12 +756,12 @@ header{
                                     visibility: visible;
                                 }
                                 .title{
-                                    @include text-config("banh", $threeColor, 600, 13px);
+                                    @include text-config("Inter", $threeColor, 600, 13px);
                                 }
                             }
                             .paragraphe{
                                 width: 80vw;
-                                @include text-config("banh", $threeColor, 600, 13px);
+                                @include text-config("Inter", $threeColor, 600, 13px);
                                 text-wrap: balance;
                                 text-align: center;
                                 padding: 0px 3px;
